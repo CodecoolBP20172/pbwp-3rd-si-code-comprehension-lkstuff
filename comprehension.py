@@ -1,33 +1,35 @@
-import random
+# geussing the number game with five try
 
-guessesTaken = 0
+import random   # import the random module from standard library
 
-print('Hello! What is your name?')
-myName = input()
+guessesTaken = 0    # assign variable to zero
 
-number = random.randint(1, 20)
-print('Well, ' + myName + ', I am thinking of a number between 1 and 20.')
+print('Hello! What is your name?')  # print a  message
+myName = input()                    # assign the user input to a variable
 
-while guessesTaken < 6:
-    print('Take a guess.')
-    guess = input()
-    guess = int(guess)
+number = random.randint(1, 20)      # assign one interger value to a variable using randint method from random modul
+print('Well, ' + myName + ', I am thinking of a number between 1 and 20.') # print a message using a variable with arithmetic operators
 
-    guessesTaken += 1
+while guessesTaken < 6:             # itarete through variable value if it is less than 6
+    print('Take a guess.')          # print message to the user
+    guess = input()                 # assign a user input to a variable
+    guess = int(guess)              # change the type of the value of the variable to interger
 
-    if guess < number:
-        print('Your guess is too low.')
+    guessesTaken += 1               # assign a new value to a variable
 
-    if guess > number:
-        print('Your guess is too high.')
+    if guess < number:              # compare two  variables if the value of the right is greater
+        print('Your guess is too low.')  # message if comparsion in this indentation block is true
 
-    if guess == number:
-        break
+    if guess > number:              # compare two  variables if the value of the left is greater
+        print('Your guess is too high.')  # message if comparsion in this indentation block is true
 
-if guess == number:
-    guessesTaken = str(guessesTaken)
-    print('Good job, ' + myName + '! You guessed my number in ' + guessesTaken + ' guesses!')
+    if guess == number:                 # compare two  variables if they are equal .
+        break                           # if comparsion in this indentation block is true, stop the loop and move to the next line
 
-if guess != number:
-    number = str(number)
-    print('Nope. The number I was thinking of was ' + number)
+if guess == number:                     # compare two  variables if they are equal
+    guessesTaken = str(guessesTaken)    # if comparsion in this indentation block is true, change the type of variable to string
+    print('Good job, ' + myName + '! You guessed my number in ' + guessesTaken + ' guesses!') # if comparsion in this indentation block is true, print message using two variables with arithmetic operator. end program.
+
+if guess != number:                     #compare two  variables if they are not equal .
+    number = str(number)                # if comparsion in this indentation block is true, change the type of variable to string.
+    print('Nope. The number I was thinking of was ' + number) # if comparsion in this indentation block is true, print message using two variables with arithmetic operator. end program
